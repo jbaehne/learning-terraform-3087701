@@ -15,6 +15,7 @@ data "aws_ami" "app_ami" {
 }
 
 
+
 module "blog_vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
@@ -23,6 +24,7 @@ module "blog_vpc" {
 
   azs             = ["us-west-2a","us-west-2b","us-west-2c"]
   public_subnets  = ["${var.environment.network_prefix}.101.0/24", "${var.environment.network_prefix}.102.0/24", "${var.environment.network_prefix}.103.0/24"]
+
 
   tags = {
     Terraform = "true"
