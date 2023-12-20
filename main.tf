@@ -14,7 +14,6 @@ data "aws_ami" "app_ami" {
   owners = [var.ami_filter.owner] # Bitnami
 }
 
-
 module "blog_vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
